@@ -68,7 +68,8 @@ pull_flow <- function(gages = NULL, start.date = "1950-10-30",
                       end.date = Sys.Date(), service.type = "iv",
                       shiny = FALSE, n.cores = NULL){
   if (!service.type %in% c("iv", "dv")) stop("service.type must be 'iv' (instantaneous) or 'dv' (daily values).")
-  file.dir <- file.path("www/potomac_gages.csv")
+#  file.dir <- file.path("www/potomac_gages.csv")
+  file.dir <- file.path("data/potomac_gages.csv")
   site.df <- data.table::fread(file.dir, data.table = FALSE,
                                colClasses = list(character = c("site_no"))) %>% 
     mutate(site_no = paste0("0", site_no))

@@ -11,8 +11,11 @@ sidebarPanel(
   hr(),
   conditionalPanel(condition = "input.data_set == 'usgs'",
   selectInput("edit_dropdown_gage", "Gage:",
-              c("Conococheague Creek at Fairfview, MD" = "conoco",
+              c("Bennett Creek at Park Mills, MD" = "bennett",
+                "Cedar Run near Catlett, VA" = "catlett",
+                "Conococheague Creek at Fairfview, MD" = "conoco",
                 "Goose Creek near Leesburg, VA" = "goose",
+                "Hawlings River near Sandy Spring, MD" = "hawlings",
                 "Monocacy River at Jug Bridge near Frederick, MD" = "mon_jug",
                 "North Branch Potomac River at Barnum, WV" = "barnum",
                 "North Branch Potomac River at Kitzmiller, MD" = "kitzmiller",
@@ -27,7 +30,8 @@ sidebarPanel(
                 "Savage River Below Savage River Dam Near Bloomington, MD" = "bloomington",
                 "Savage River Near Barton, MD" = "barton",
                 "Seneca Creek at Dawsonville, MD" = "seneca",
-                "Shenandoah River at Millville, WV" = "shen_mill"))
+                "Shenandoah River at Millville, WV" = "shen_mill",
+                "Patuxent River near Unity, MD" = "unity"))
   ) # End conditionalPanel usgs.
   
 ) # End sidebarPanel

@@ -5,7 +5,8 @@ source("global/load_packages.R", local = TRUE)
 source("global/usgs_plot_func.R", local = TRUE)
 source("global/drupal_plot_func.R", local = TRUE)
 #------------------------------------------------------------------------------
-file.dir <- file.path("www/potomac_gages.csv")
+#file.dir <- file.path("www/potomac_gages.csv")
+file.dir <- file.path("data/potomac_gages.csv")
 usgs.gages.df <- data.table::fread(file.dir, data.table = FALSE,
                              colClasses = list(character = c("site_no"))) %>% 
   mutate(site_no = paste0("0", site_no))

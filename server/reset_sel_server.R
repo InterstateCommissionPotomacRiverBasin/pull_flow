@@ -1,17 +1,21 @@
 #----------------------------------------------------------------------------
 observeEvent(input$reset.usgs, {
   updateCheckboxGroupInput(session, "gages_cbox", 
-                           selected = c("conoco", "goose", "mon_jug", "barnum",
+                           selected = c("bennett", "catlett", "conoco", "goose", 
+                                        "hawlings", "mon_jug", "barnum",
                                         "kitzmiller", "luke", "nbp_cumb", "opequan",
                                         "hanc", "paw", "por", "shepherdstown",
                                         "lfalls", "bloomington", "barton", 
-                                        "seneca", "shen_mill"))
+                                        "seneca", "shen_mill", "unity"))
 })
 #----------------------------------------------------------------------------
 observeEvent(input$clear.usgs, {
   updateCheckboxGroupInput(session, "gages_cbox", "USGS Gage",
-                           c("Conococheague Creek at Fairfview, MD" = "conoco",
+                           c("Bennett Creek at Park Mills, MD" = "bennett",
+                             "Cedar Run near Catlett, VA" = "catlett",
+                             "Conococheague Creek at Fairfview, MD" = "conoco",
                              "Goose Creek near Leesburg, VA" = "goose",
+                             "Hawlings River near Sandy Spring, MD" = "hawlings",
                              "Monocacy River at Jug Bridge near Frederick, MD" = "mon_jug",
                              "North Branch Potomac River at Barnum, WV" = "barnum",
                              "North Branch Potomac River at Kitzmiller, MD" = "kitzmiller",
@@ -26,7 +30,8 @@ observeEvent(input$clear.usgs, {
                              "Savage River Below Savage River Dam Near Bloomington, MD" = "bloomington",
                              "Savage River Near Barton, MD" = "barton",
                              "Seneca Creek at Dawsonville, MD" = "seneca",
-                             "Shenandoah River at Millville, WV" = "shen_mill"),
+                             "Shenandoah River at Millville, WV" = "shen_mill",
+                             "Patuxent River near Unity, MD" = "unity"),
                            selected = NULL)
 })
 #------------------------------------------------------------------------------
@@ -41,7 +46,7 @@ usgs.gages <- reactive({
 observeEvent(input$view_reset_usgs, {
     updateCheckboxGroupInput(session, "view_gages_cbox", 
                              selected = sites.vec()$description)
-    #                             c("conoco", "goose", "mon_jug", "barnum",
+    #                             c("bennett", "catlett", "conoco", "goose", "mon_jug", "barnum",
     #                                        "kitzmiller", "luke", "nbp_cumb", "opequan",
     #                                        "hanc", "paw", "por", "shepherdstown",
     #                                        "lfalls", "bloomington", "barton", 
